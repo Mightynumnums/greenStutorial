@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Simple Sequence</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="donke">
+  <img id="animal" src="img/donke.svg" width="300" height="450">
+</div>
+<div class="puffers">
+  <img id="puffs" src="img/puff.svg" width="300" height="450">
+</div>
+<div class="eyeLids">
+    <img id="lids" src="img/lids.svg" width="300" height="450">
+</div>
+
+</div>
+
+<div id="content">
+	<h1>tutorial</h1>
+	<p>Some text here</p>
+</div>
+
+
+<!-- load scripts after dom has been rendered -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+<script>
+	//we'll use a window.onload for simplicity, but typically it is best to use either jQuery's $(document).ready() or $(window).load() or cross-browser event listeners so that you're not limited to one.
+	var timeline = new TimelineMax();
+    timeline.from('#animal', 1, {scale:0, ease:Bounce.easeOut})
+    // timeline.from('#lids', 1, {scale: 0, ease:Bounce.easeOut })  
+     timeline.from('#puffs', 1, {opacity: 0, scale:0, ease:Bounce.easeOut})
+
+// var mc_lid_top_left = document.getElementById("mc_lid_top_left");
+// var mc_lid_bottom_left = document.getElementById("mc_lid_bottom_left");
+// var mc_lid_top_right = document.getElementById("mc_lid_top_right");
+// var mc_lid_bottom_right = document.getElementById("mc_lid_bottom_right");
+
+// function blinking() {
+
+//   var tl = new TimelineMax({
+//     paused: true,
+//     repeat: 1,
+//     yoyo: true,
+//     onCompleteParams: ["{self}"],
+//     onComplete: function() {
+//       //delay, callback, params, scope
+//       TweenLite.delayedCall((3 * Math.random() + 0.6), tl.restart, [], tl);
+//     }
+//   });
+
+//   var lids = TweenMax.from('#lids', 0.2, {
+//     scaleY: 0,
+//     transformOrigin: "0% 50%",
+//   });
+
+//   tl.add(lids);
+//   tl.progress(1).progress(0);
+//   tl.play();
+
+//   return tl;
+// }
+
+// /////////////////////////////////////
+// // just eyes blinking
+// // var lid_top_left = document.getElementById("lid_top_left");
+// // var lid_bottom_left = document.getElementById("lid_bottom_left");
+// // var lid_top_right = document.getElementById("lid_top_right");
+// // var lid_bottom_right = document.getElementById("lid_bottom_right");
+
+// // function justBlinking() {
+
+// //   var tl = new TimelineMax({
+// //     paused: true,
+// //     repeat: 1,
+// //     yoyo: true,
+// //     onCompleteParams: ["{self}"],
+// //     onComplete: function() {
+// //       TweenLite.delayedCall((3 * Math.random() + 0.6), tl.restart, [], tl);
+// //     }
+// //   });
+
+// //   var lid_top = TweenMax.from([lid_top_left, lid_top_right], 0.2, {
+// //     scaleY: 0,
+// //     transformOrigin: "center top",
+// //   });
+// //   var lid_bottom = TweenMax.from([lid_bottom_left, lid_bottom_right], 0.2, {
+// //     scaleY: 0,
+// //     transformOrigin: "center bottom",
+// //   });
+
+// //   tl.add([lid_top, lid_bottom]);
+// //   tl.progress(1).progress(0);
+// //   tl.play();
+
+// //   return tl;
+// // }
+
+// // run blink functions
+// // makes sure animation runs at next 
+// // frame to prevent layout trashing
+// window.requestAnimationFrame(function() {
+//   console.log('GOT INSIDE')
+//   blinking();
+//   // justBlinking();
+
+// });
+
+
+
+
+
+// timeline.from('h1', .7, {opacity:0, scale:2, ease:Bounce.easeOut.config(4)})
+</script>
+</body>
+</html>
